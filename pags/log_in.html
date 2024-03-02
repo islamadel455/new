@@ -1,0 +1,365 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Login_dashboard.css">
+</head>
+<body>
+    
+
+    <section>
+  
+        <div class="box">
+          
+          <div class="square" style="--i:0;"></div>
+          <div class="square" style="--i:1;"></div>
+          <div class="square" style="--i:2;"></div>
+          <div class="square" style="--i:3;"></div>
+          <div class="square" style="--i:4;"></div>
+          <div class="square" style="--i:5;"></div>
+          
+         <div class="container"> 
+          <div class="form"> 
+            <div class="imgs"></div>
+            <h2>Hey,
+<br>
+Login Now!
+
+            </h2>
+
+            <p>I Am old User / <a href="#" style="color: #2fc3d5;    text-transform: capitalize;
+                text-decoration: none;">Create Now</a></p>
+
+            <form action="" method='POST'>
+              <div class="inputBx">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                  </svg>
+                <input type="email" name='email' required="required">
+                <span>Login</span>
+                <i class="fas fa-user-circle"></i>
+              </div>
+              <div class="inputBx password">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
+                    <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
+                  </svg>
+                <input id="password-input" type="password" name="password" required="required">
+                <span>Password</span>
+                <a href="#" class="password-control" onclick="return show_hide_password(this);"></a>
+                <i class="fas fa-key"></i>
+              </div>
+              
+              <div class="inputBx" style="border: none !important;padding: 0">
+                <input type="submit"  value="Log in" name='login'> 
+              </div>
+            </form>
+            <p>Don't have an account <a href="signup_dashboard.php">Sign up</a></p>
+          </div>
+        </div>
+          
+        </div>
+      </section>
+
+
+
+
+<script>
+  function show_hide_password(target){
+	var input = document.getElementById('password-input');
+	if (input.getAttribute('type') == 'password') {
+		target.classList.add('view');
+		input.setAttribute('type', 'text');
+	} else {
+		target.classList.remove('view');
+		input.setAttribute('type', 'password');
+	}
+	return false;
+}
+</script>
+
+
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+
+
+.fas {
+  width: 32px;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f8f8f8;
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  color: black;
+  width: 100vw;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.box {
+  position: relative;
+}
+.box .square {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  animation: square 10s linear infinite;
+  animation-delay: calc(-1s * var(--i));
+}
+@keyframes square {
+  0%, 100% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+.box .square:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  top: -15px;
+  right: -45px;
+}
+.box .square:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  top: 105px;
+  left: -125px;
+  z-index: 2;
+}
+.box .square:nth-child(3) {
+  width: 60px;
+  height: 60px;
+  bottom: 85px;
+  right: -45px;
+  z-index: 2;
+}
+.box .square:nth-child(4) {
+  width: 50px;
+  height: 50px;
+  bottom: 35px;
+  left: -95px;
+}
+.box .square:nth-child(5) {
+  width: 50px;
+  height: 50px;
+  top: -15px;
+  left: -25px;
+}
+.box .square:nth-child(6) {
+  width: 85px;
+  height: 85px;
+  top: 165px;
+  right: -155px;
+  z-index: 2;
+}
+
+.container {
+  position: relative;
+  padding: 50px;
+  width: 260px;
+  min-height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  border-radius: 5px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 2%);
+}
+
+.form {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.form h2,.form p {
+   
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+.form .inputBx {
+  position: relative;
+  margin-bottom: 20px;
+  position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 6px 18px;}
+.form .inputBx input {
+  width: 80%;
+  outline: none;
+  border: none;
+  padding: 8px 10px;
+  padding-left: 40px;
+  border-radius: 15px;
+  font-size: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.form .inputBx .password-control {
+  position: absolute;
+  right: 5px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(https://snipp.ru/demo/495/view.svg) 0 0 no-repeat;
+  transition: 0.5s;
+}
+.form .inputBx .view {
+  background: url(https://snipp.ru/demo/495/no-view.svg) 0 0 no-repeat;
+  transition: 0.5s;
+}
+.form .inputBx .fas {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+}
+.form .inputBx input[type=submit] {
+    color: #111;
+    max-width: 100px;
+    padding: 8px 10px;
+    box-shadow: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 1.5s;
+    border-radius: 30px;
+    background: #2fc3d5;
+    color: white;
+    border: none;
+}
+.form .inputBx input[type=submit]:hover {
+  background: linear-gradient(115deg, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.25));
+  transition: 0.5s;
+}
+
+.form .inputBx span {
+  position: absolute;
+  left: 30px;
+  padding: 10px;
+  display: inline-block;
+   
+  transition: 0.5s;
+  pointer-events: none;
+}
+.form .inputBx input:focus ~ span,
+.form .inputBx input:valid ~ span {
+  transform: translateX(-30px) translateY(-25px);
+  font-size: 12px;
+}
+.form p {
+   
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+.form p a:hover {
+  background-color: #000;
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.remember {
+  position: relative;
+  display: inline-block;
+   
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.imgs{
+    width: 100%;
+    height: 23vh;
+    background-image: url(/426693901_1558346368072648_7919453629327291772_n-removebg-preview.png);
+    background-position: center center; background-size: cover;
+}
+    
+    
+    </style>
+
+
+<style>
+@media screen and (max-width:767px) {
+    .square{display: none;}
+    .container {
+    position: relative;
+    padding: 0;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: rgba(255, 255, 255, 0.1); */
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+}
+.form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 6%;
+}
+
+.form .inputBx input{
+    border-radius: 30px;
+}
+/* 
+ */
+
+ .form .inputBx input{background: none; box-shadow: none;}
+}
+
+
+</style>
+
+
+
+
+
+</body>
+</html>
